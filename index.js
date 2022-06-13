@@ -8,12 +8,31 @@ function game() {
         console.log('computer choose, ' + computerChoice);
         return computerChoice
     }
-    
+
+    function winner() {
+        console.log('test winner function');
+        if (playerSelection === computerSelection) {
+            console.log('Tie');
+        } else if (playerSelection == 'rock') {
+                if (computerSelection == 'paper') {
+                    console.log('Computer win!')
+                } else {
+                    console.log('Player win!');
+                }
+            }
+    }
+
+    function computerSelection() {
+        console.log('test computer selection');
+        // let computerSelection = computerChoice;
+    }
+
+
     function playerSelection() {
         let playerHand = ['Rock', 'Paper', 'Scicssor']
         let playerPrompt = prompt("Please enter your hand.");
-    
-        switch(playerPrompt) {
+
+        switch (playerPrompt) {
             case 'rock':
                 text = 'You choose rock!';
                 console.log('You choose rock!');
@@ -30,27 +49,15 @@ function game() {
                 console.log('What was that?');
         }
 
-        function computerSelection() {
-    
-        }
+        
 
 
-        function winner(playerSelection, computerSelection) {
-            if (playerSelection === computerSelection) {
-                console.log('Tie');
-            } else if (playerSelection == 'rock') {
-                    if (computerSelection == 'paper') {
-                        console.log('Computer win!')
-                    } else {
-                        console.log('Player win!');
-                    }
-                }
-            }
-        }
 
-        playerSelection();
-        computerPlay();
-        winner();
+
+
     }
-
+    playerSelection();
+    computerPlay();
+    winner();
+}
 game();
